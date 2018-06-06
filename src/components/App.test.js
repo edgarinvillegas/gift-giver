@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import App from './App';
 
 describe('App', () => {
+    console.log('-------------------------------------------------------');
     const app = shallow(<App />);
 
     it("renders correctly", () => {
