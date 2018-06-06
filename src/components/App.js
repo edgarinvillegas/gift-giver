@@ -5,12 +5,6 @@ class App extends Component {
     state = {  //doesn't work
         gifts: []
     };
-    constructor() {
-        super();
-        this.state = {
-            gifts: []
-        };
-    }
 
     addGift = () => {
         const { gifts } = this.state;
