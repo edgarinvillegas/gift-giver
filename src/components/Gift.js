@@ -7,6 +7,7 @@ class Gift extends Component {
         present: ''
     };
     render() {
+        const { gift, removeGift } = this.props;
         return (
             <div>
                 <Form>
@@ -24,6 +25,7 @@ class Gift extends Component {
                             onChange={event => this.setState({ present: event.target.value })}
                         />
                     </FormGroup>
+                    <Button className="btn-remove" onClick={() => removeGift(gift.id) }> Remove Gift </Button>
                 </Form>
             </div>
         );

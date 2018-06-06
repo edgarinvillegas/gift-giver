@@ -19,13 +19,23 @@ class App extends Component {
         });
     };
 
+    removeGift = (id) => {
+        this.setState((currState) => ({
+            gifts: currState.gifts.filter(gift => gift.id !== id )
+        }));
+    };
+
     render() {
         return (
             <div>
                 <h2>Gift Giver</h2>
                 <ul className="gift-list">
                     {this.state.gifts.map(gift => (
-                        <Gift key={gift.id}>{gift.id}</Gift>
+                        <Gift
+                            key={gift.id}
+                            gift={gift}
+                            removeGift={this.removeGift}
+                        />
                     ))}
                 </ul>
                 <Button className='btn-add' onClick={this.addGift}>Add gift</Button>
